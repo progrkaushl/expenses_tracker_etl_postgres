@@ -4,13 +4,13 @@
 
 _filepath=$1
 
-log_dt=$(date +"%Y%m%d%s")
-log_file_name="expanse_tracker_etl_postgres_${log_dt}"
 
-# Create log dir
+# Generate Log file
 log_dir="./logs"
 `mkdir -p $log_dir`
 
+log_dt=$(date +"%Y%m%d%s")
+log_file_name="expanse_tracker_etl_postgres_${log_dt}"
 log_file="${log_dir}/${log_file_name}"
 
 
