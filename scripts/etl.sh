@@ -5,7 +5,14 @@
 _filepath=$1
 
 log_dt=$(date +"%Y%m%d%s")
-log_file="logs/expanse_tracker_etl_postgres_${log_dt}"
+log_file_name="expanse_tracker_etl_postgres_${log_dt}"
+
+# Create log dir
+log_dir="./logs"
+`mkdir -p $log_dir`
+
+log_file="${log_dir}/${log_file_name}"
+
 
 if [ -z $_filepath ]; then
     echo "Empty string provided as filepath...."
